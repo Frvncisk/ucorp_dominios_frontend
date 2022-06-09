@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="container">
+
+    <button type="button" class="btn btn-primary" style="float: right;" (click)="nuevoServicio()">Nuevo registro</button>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">nombre</th>
+                <th scope="col">Fecha de contrato</th>
+                <th scope="col">Fecha de vencimiento</th>
+                <th scope="col">Tipo servicio</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let servicio of servicios">
+                <th scope="row">{{servicio.id}}</th>
+                <th>{{servicio.nombre}}</th>
+                <th>{{servicio.fecha_de_adquisicion}}</th>
+                <th>{{servicio.fecha_de_expiracion}}</th>
+                <th>{{servicio.tipo.nombre_servicio}}</th>
+                <th (click)="editarServicios(servicio.id)"><img src="../../../assets/imagenes/lapiz.png" width="20px" height="20px" alt=""></th>
+                <th><img src="../../../assets/imagenes/eliminar (1).png" width="20px" height="20px" alt=""></th>
+            </tr>
+        </tbody>
+    </table>
+</div>

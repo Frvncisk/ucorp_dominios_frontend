@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="container">
+    <form [formGroup]="editarForm" class="form-group row" (ngSubmit)="GuardarDatos(editarForm.value)">
+        <div class="col-md-4">
+            <input type="hidden" class="form-control" formControlName="id">
+        </div>
+        <div class="col-md-4">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" formControlName="nombre">
+        </div>
+        <div class="col-md-4">
+            <label for="fecha_de_adquisicion">Fecha de contrato</label>
+            <input type="date" class="form-control" formControlName="fecha_de_adquisicion">
+        </div>
+        <div class="col-md-4">
+            <label for="fecha_de_expiracion">Fecha de expiracion </label>
+            <input type="date" class="form-control" formControlName="fecha_de_expiracion">
+        </div>
+        <div class="col-md-4">
+            <select class="form-select" aria-label="Default select example" formControlName="servicio_tipo_id">
+                <option selected>Tipo de servicio</option>
+                <option value="1">Licencia</option>
+                <option value="2">Servicio</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+        </div>
+    </form>
+</div>
