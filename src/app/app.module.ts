@@ -9,6 +9,7 @@ import { FooterComponent } from './plantilla/footer/footer.component';
 import { HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ListarServiciosComponent } from './vistas/listar-servicios/listar-servicios.component';
+import { AlertasComponent } from './plantilla/alertas/alertas.component';
 
 
 
@@ -18,7 +19,8 @@ import { ListarServiciosComponent } from './vistas/listar-servicios/listar-servi
     HeaderComponent,
     FooterComponent,
     routingComponents,
-    ListarServiciosComponent
+    ListarServiciosComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,

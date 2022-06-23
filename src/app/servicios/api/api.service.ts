@@ -42,7 +42,6 @@ export class ApiService {
   putServicio(form:ServicioI):Observable<ResponseI>{
     let direccion = this.url + "servicio/" + form.id;
     let token = localStorage.getItem('token');
-    console.log(form);
     return this.http.put<ResponseI>(direccion, form);
     }
 
@@ -56,6 +55,16 @@ deleteServicio(form:ServicioI):Observable<ResponseI>{
     body:form
   }
   return this.http.delete<ResponseI>(direccion, Options);
+  }
+
+  postServicios(form:ServicioI):Observable<ResponseI>{
+    let direccion = this.url + "servicio";
+    let token = localStorage.getItem('token');
+    return this.http.post<ResponseI>(direccion, form, {
+      headers:{
+        'Authorization':'Bearer ' + token
+      }
+    });
   }
 
   }
