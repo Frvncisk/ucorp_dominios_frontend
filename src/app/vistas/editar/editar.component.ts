@@ -59,11 +59,20 @@ export class EditarComponent implements OnInit {
 
   GuardarDatos(form:ServicioI){
     this.api.putServicio(form).subscribe(data=>{
+      if(data.status=='ok'){
+        
+        this.router.navigate(['servicios']);
+      }
+      console.log(data);
+    });
+  }
+
+  eliminarServicios(){
+    let datos: ServicioI = this.editarForm.value;
+    this.api.deleteServicio(datos).subscribe(data =>{
       this.router.navigate(['servicios']);
       console.log(data);
-
-    });
-    console.log(form);
+    })
   }
 
   //validar select 

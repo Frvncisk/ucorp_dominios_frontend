@@ -1,3 +1,4 @@
+import { ServicioI } from './../../modelos/servicio.interface';
 import { Component, OnInit } from '@angular/core';
 import { ApiService} from '../../servicios/api/api.service';
 import { Router} from '@angular/router';

@@ -46,4 +46,16 @@ export class ApiService {
     return this.http.put<ResponseI>(direccion, form);
     }
 
-}
+deleteServicio(form:ServicioI):Observable<ResponseI>{
+  let direccion = this.url + "servicio/" + form.id;
+  let token = localStorage.getItem('token');
+  let Options={
+    Headers: new HttpHeaders({
+      'conten-type': 'application/json'
+    }),
+    body:form
+  }
+  return this.http.delete<ResponseI>(direccion, Options);
+  }
+
+  }
